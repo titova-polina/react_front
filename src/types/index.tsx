@@ -9,7 +9,7 @@ export interface JobDetails {
 }
 
 export interface User {
-  name: string;
+  name?: string;
   email: string;
   desiredJobTitle?: string;
   aboutMe?: string;

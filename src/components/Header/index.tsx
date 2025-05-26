@@ -2,11 +2,13 @@
 
 import { UserResponse } from "@/API";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export const Header = () => {
   const router = useRouter();
+  const pathname = usePathname();
+  console.log("PATH", pathname);
   const [authorizedUser, setAuthorizedUser] = useState<UserResponse | null>(
     null
   );
@@ -27,13 +29,17 @@ export const Header = () => {
         <nav className="flex gap-7 ml-auto">
           <Link
             href="/jobs"
-            className="text-lg text-blue-600 hover:text-blue-800 transition duration-600 ease-in"
+            className={`text-lg text-blue-600 hover:text-sky-600 transition duration-600 ease-in ${
+              pathname === "/jobs" && "text-cyan-400"
+            }`}
           >
             Jobs
           </Link>
           <Link
             href="/liked"
-            className="text-lg text-blue-600 hover:text-blue-800 transition duration-600 ease-in"
+            className={`text-lg text-blue-600 hover:text-sky-600 transition duration-600 ease-in ${
+              pathname === "/liked" && "text-cyan-400"
+            }`}
           >
             Liked
           </Link>
