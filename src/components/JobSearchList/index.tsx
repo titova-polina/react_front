@@ -3,10 +3,7 @@
 import { fetchJobs } from "@/API";
 import { JobDetails } from "@/types";
 import { Field, Form, Formik } from "formik";
-import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
-import { LikeIcon } from "../icons/like";
-import { DetailsIcon } from "../icons/details";
 import { JobList } from "../JobList";
 
 export const JobSearchList = () => {
