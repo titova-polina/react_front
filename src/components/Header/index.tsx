@@ -43,7 +43,7 @@ export const Header = () => {
               onClick={() => {
                 window.localStorage.removeItem("userData");
                 router.push("/create-profile");
-                setAuthorizedUser(null);
+                window.location.reload();
               }}
             >
               Log out

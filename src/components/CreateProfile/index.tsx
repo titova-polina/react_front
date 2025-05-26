@@ -27,7 +27,7 @@ export const CreateProfile = () => {
     try {
       const { data } = await register(userData);
       window.localStorage.setItem("userData", JSON.stringify(data));
-      setAuthorizedUser(data);
+      window.location.reload();
     } catch (err) {
       const error = err as AxiosError<{ message: string }>;
       setError(
@@ -47,7 +47,7 @@ export const CreateProfile = () => {
     try {
       const { data } = await login(loginData);
       window.localStorage.setItem("userData", JSON.stringify(data));
-      setAuthorizedUser(data);
+      window.location.reload();
     } catch (err) {
       const error = err as AxiosError<{ message: string }>;
       setError(

@@ -42,15 +42,15 @@ type GetJobsParams = {
 };
 
 const JSEARCH_API = axios.create({
-  baseURL: `https://jsearch.p.rapidapi.com`,
+  baseURL: `https://${process.env.NEXT_PUBLIC_JSEARCH_HOST}`,
   headers: {
-    "x-rapidapi-key": "8aeb43e818msh4375f90dbd99843p146fb0jsnb70346ff8b53",
-    "x-rapidapi-host": "jsearch.p.rapidapi.com",
+    "x-rapidapi-key": process.env.NEXT_PUBLIC_JSERACH_API_KEY,
+    "x-rapidapi-host": process.env.NEXT_PUBLIC_JSEARCH_HOST,
   },
 });
 
 const API = axios.create({
-  baseURL: `http://localhost:3002/api`,
+  baseURL: process.env.NEXT_PUBLIC_BASE_URL,
   headers: { "content-type": "application/json", accept: "application/json" },
 });
 
